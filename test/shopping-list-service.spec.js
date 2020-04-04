@@ -81,7 +81,7 @@ describe(`Shopping List Service object`, function () {
         });
     });
 
-    it(`deleteItem() removes an item by id from 'shopping_list' table`, () => {
+    it(`deleteItem deletes item from "shopping_list"`, () => {
       const idToDelete = 3;
       return ShoppingListService.deleteItem(db, idToDelete)
         .then(() => ShoppingListService.getAllItems(db))
@@ -97,7 +97,7 @@ describe(`Shopping List Service object`, function () {
         });
     });
 
-    it(`updateItem() updates an item in the 'shopping_list' table`, () => {
+    it(`updateItem updates item from 'shopping_list'`, () => {
       const idOfItemToUpdate = 3;
       const newItemData = {
         name: 'updated title',
@@ -126,7 +126,7 @@ describe(`Shopping List Service object`, function () {
         });
     });
 
-    it(`insertItem() inserts an item and resolves it with an 'id'`, () => {
+    it(`insertItem inserts an item`, () => {
       const newItem = {
         name: 'Test new name name',
         price: '5',
